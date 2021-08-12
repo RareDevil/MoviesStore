@@ -1,13 +1,8 @@
-# Vue setup
+# Frontend
 
 ## Project setup
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
 ```
 
 ### Compiles and minifies for production
@@ -15,12 +10,7 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-# web
+# Backend
 
 Open MoviesStore.sln with visual studio 19 or Rider.
 Run the project.
