@@ -38,8 +38,8 @@
                                         Location
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarLocationDropdownMenuLink">
-                                        <li><span class="dropdown-item">All</span></li>
-                                        <li v-for="loc in locations" v-bind:key="loc"><span class="dropdown-item" >{{ loc }}</span></li>
+                                        <li><span class="dropdown-item" v-on:click="changeLoc('All')">All</span></li>
+                                        <li v-for="loc in locations" v-bind:key="loc"><span class="dropdown-item" v-on:click="changeLoc(loc)">{{ loc }}</span></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -97,6 +97,14 @@ export default {
                 name: 'Home',
                 params: {
                     language: (lang === "All" ? "": lang)
+                }
+            });
+        },
+        changeLoc: function(loc) {
+            this.$router.push({
+                name: 'Home',
+                params: {
+                    location: (loc === "All" ? "": loc)
                 }
             });
         }

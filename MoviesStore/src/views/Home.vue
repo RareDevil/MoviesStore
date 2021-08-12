@@ -33,19 +33,19 @@ export default {
         query: function(newVal) {
             return axios.get('/api/movies?query=' + this.getValueOrEmptyString(newVal) +
                 '&language=' + this.getValueOrEmptyString(this.language) +
-                '&location' + this.getValueOrEmptyString(this.location))
+                '&location=' + this.getValueOrEmptyString(this.location))
                 .then(({ data }) => this.moviesCollection = data);
         },
         language: function(newVal) {
             return axios.get('/api/movies?query=' + this.getValueOrEmptyString(this.query) +
                 '&language=' + this.getValueOrEmptyString(newVal) +
-                '&location' + this.getValueOrEmptyString(this.location))
+                '&location=' + this.getValueOrEmptyString(this.location))
                 .then(({ data }) => this.moviesCollection = data);
         },
         location: function(newVal) {
             return axios.get('/api/movies?query=' + this.getValueOrEmptyString(this.query) +
                 '&language=' + this.getValueOrEmptyString(this.language) +
-                '&location' + this.getValueOrEmptyString(newVal))
+                '&location=' + this.getValueOrEmptyString(newVal))
                 .then(({ data }) => this.moviesCollection = data);
         }
     },
