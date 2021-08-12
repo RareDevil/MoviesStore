@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Testing;
@@ -27,6 +28,17 @@ namespace MoviesStore.Tests
             var response = (HelloResponse)service.Any(new Hello { Name = "World" });
 
             Assert.That(response.Result, Is.EqualTo("Hello, World!"));
+        }
+
+        [Test]
+        public void Can_get_movies()
+        {
+            MyServices service = appHost.Container.Resolve<MyServices>();
+
+            List<MoviesResponse> response = service.Get(new MoviesRequest {});
+
+            // TODO Fix this so that is can load the json file properly
+            Assert.That(response, Is.EqualTo(null));
         }
     }
 }
