@@ -3,7 +3,7 @@ using ServiceStack;
 
 namespace MoviesStore.ServiceModel
 {
-    [Route("/movies", "GET")]
+    [Route("/api/movies", "GET")]
     public class MoviesRequest : IReturn<List<MoviesResponse>>
     {
         public string Query { get; set; }
@@ -11,17 +11,17 @@ namespace MoviesStore.ServiceModel
         public string Location { get; set; }
     }
 
-    [Route("/movie", "GET")]
-    [Route("/movie/{imdbID}", "GET")]
+    [Route("/api/movie", "GET")]
+    [Route("/api/movie/{imdbID}", "GET")]
     public class MovieRequest : IReturn<MoviesResponse>
     {
         public string imdbID { get; set; }
     }
 
-    [Route("/movie/languages", "GET")]
+    [Route("/api/movie/languages", "GET")]
     public class MovieLanguagesRequest : IReturn<List<string>>{}
 
-    [Route("/movie/locations", "GET")]
+    [Route("/api/movie/locations", "GET")]
     public class MovieLocationsRequest : IReturn<List<string>>{}
 
     public class MoviesResponse
